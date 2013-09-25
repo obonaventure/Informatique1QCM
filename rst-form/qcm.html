@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.9.1: http://docutils.sourceforge.net/" />
+<title>Mise en Route</title>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" href="../rst-form/css/rst-form.css" type="text/css" />
+</head>
+<body>
+<div class="document" id="mise-en-route">
+<h1 class="title">Mise en Route</h1>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="js/jquery-shuffle.js"></script>
+<script type="text/javascript" src="js/rst-form.js"></script>
+<script type="text/javascript">$nmbr_prop = 4</script><p>Ces questions ont pour objectif de vous permettre de tester vous-même votre compréhension de la matière couverte par cette mission de mise en route.</p>
+<p>Ces questions supposent que vous avez lu les sections suivantes du livre de référence :</p>
+<blockquote>
+<p><a class="reference external" href="http://math.hws.edu/javanotes/c1/index.html"><cite>Chap 1 : Overview: The Mental Landscape</cite></a></p>
+<blockquote>
+<a class="reference external" href="http://math.hws.edu/javanotes/c1/index.html"><cite>1.1 : The Fetch and Execute Cycle: Machine Language</cite></a>
+<a class="reference external" href="http://math.hws.edu/javanotes/c2/index.html"><cite>1.2 : Asynchronous Events: Polling Loops and Interrupts</cite></a>
+<a class="reference external" href="http://math.hws.edu/javanotes/c3/index.html"><cite>1.3 : The Java Virtual Machine</cite></a></blockquote>
+</blockquote>
+<div class="section" id="question-1-initialisation-de-variables">
+<h1>Question 1. Initialisation de variables</h1>
+<p>Parmi les fragments de code Java suivants, quels sont ceux qui correspondent à des initialisations correctes de variables entières ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">12</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span><span class="o">=</span> <span class="mi">42352</span><span class="o">;</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">var1</span><span class="o">=-</span><span class="mi">12</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">var2</span><span class="o">=</span><span class="mi">42352</span><span class="o">;</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">var1</span><span class="o">=-</span><span class="mi">12</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">var2</span><span class="o">=-</span><span class="n">var1</span><span class="o">;</span>
+</pre>
+<p class="comment">En Java, une variable est initialisée en utilisant une constante ou une expression qui s'évalue avec le type de la variable.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">var_1</span><span class="o">=-</span><span class="mi">12100</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">var_2</span><span class="o">=</span><span class="mi">42352</span><span class="o">;</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">var</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
+<span class="kt">int</span> <span class="kt">double</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
+</pre>
+<p class="comment">En Java, le mot clé <tt class="docutils literal">double</tt> est réservé. Il ne peut être utilisé pour nommer une variable.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">var</span><span class="o">=</span><span class="mf">1.2</span><span class="o">;</span>
+<span class="kt">int</span> <span class="kt">double</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
+</pre>
+<p class="comment">En Java, l'expression <tt class="docutils literal">1.2</tt> est un nombre réel et non un nombre entier.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">var1</span><span class="o">=</span><span class="sc">'1'</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">var2</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
+</pre>
+<p class="comment">En Java, l'expression <tt class="docutils literal">\`1\`</tt> correspond au caractère <tt class="docutils literal">1</tt>. Ce n'est donc pas un nombre entier.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">123456789123456789123456789</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
+</pre>
+<p class="comment">En Java, les entiers ne peuvent représenter que les nombres entre <tt class="docutils literal"><span class="pre">-2147483648</span></tt> et <tt class="docutils literal">2147483647</tt>. Le nombre <tt class="docutils literal">123456789123456789123456789</tt> est trop grand. Il ne peut être représenté que sous la forme d'un <tt class="docutils literal">long</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-2-initialisation-de-variables">
+<h1>Question 2. Initialisation de variables</h1>
+<p>Parmi les fragments de programmes Java ci-dessous, quels sont ceux qui respectent la syntaxe du langage ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span><span class="o">=</span><span class="mf">2.0</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="sc">'3'</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span><span class="o">=-</span><span class="mi">1</span><span class="o">;</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span><span class="o">=</span><span class="mf">3.2</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="sc">'9'</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span><span class="o">=-</span><span class="mi">1</span><span class="o">;</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mf">0.9</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span><span class="o">=</span><span class="mf">3.2</span><span class="n">e</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="sc">'0'</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span><span class="o">=-</span><span class="mi">1234</span><span class="o">;</span>
+</pre>
+<p class="comment">Le type <tt class="docutils literal">int</tt> ne peut être utilisé que pour stocker des nombres entiers.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=-</span><span class="mi">12345</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span><span class="o">=</span><span class="mi">3</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="err">'</span><span class="mi">12</span><span class="err">'</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">=</span><span class="kc">true</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span><span class="o">=</span><span class="mi">678</span><span class="o">;</span>
+</pre>
+<p class="comment">Le type <tt class="docutils literal">char</tt> ne peut être utilisé que pour stocker un (et un seul) caractère. <tt class="docutils literal">'12'</tt> n'est pas un caractère valide. <tt class="docutils literal">char <span class="pre">c='2';</span></tt> serait une déclaration valide.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span><span class="o">=</span><span class="sc">'8'</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="sc">'a'</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">=</span><span class="kc">false</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span><span class="o">=-</span><span class="mi">1</span><span class="o">;</span>
+</pre>
+<p class="comment">Le type <tt class="docutils literal">double</tt> ne peut être utilisé que pour stocker un nombre réel. <tt class="docutils literal">'8'</tt> est le caractère qui correspond au chiffre huit et non un nombre réel. Cette initialisation n'est donc pas valide. Notez que la ligne <tt class="docutils literal">int i=2/3;</tt> est tout à fait valide. L'initialisation d'une variable peut être faite en utilisant n'importe quelle expression qui retourne une variable de ce type. Cependant, comme <tt class="docutils literal">i</tt> est une variable de type <tt class="docutils literal">int</tt>, sa valeur sera <tt class="docutils literal">0</tt> puisque la division <tt class="docutils literal">2/3</tt> est une division entière.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">d</span><span class="o">=-</span><span class="mf">2.34</span><span class="o">;</span>
+<span class="kt">char</span> <span class="n">c</span><span class="o">=</span><span class="sc">'z'</span><span class="o">;</span>
+<span class="kt">boolean</span> <span class="n">b</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">l</span><span class="o">=-</span><span class="mi">1</span><span class="o">;</span>
+</pre>
+<p class="comment">Le type <tt class="docutils literal">boolean</tt> ne peut être utilisé que pour stocker une valeur booléenne. Il peut s'agir de <tt class="docutils literal">true</tt>, <tt class="docutils literal">false</tt> ou n'importe quelle expression qui donne une valeur booléenne. Ainsi, l'expression <tt class="docutils literal"><span class="pre">i==9</span></tt> est une expression booléenne qui a la valeur <tt class="docutils literal">false</tt>. Cette expression aurait pu aussi être utilisée pour initialiser la variable booléenne <tt class="docutils literal">b</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-3-les-commentaires">
+<h1>Question 3. Les commentaires</h1>
+<p>Afin de faciliter la compréhension des programmes écrits dans un langage de programmation tel que Java, il est important de bien le documenter en utilisant des commentaires. Parmi les fragments de code Java ci-dessous, lequel est syntaxiquement correct ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="cm">/***********************
+ * Mon programme
+ *
+ ***********************/</span>
+ <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span> <span class="c1">// compteur
+</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+ <span class="c1">// test
+</span> <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="cm">/***********************
+ * Mon programme
+ *
+ ***********************/</span>
+ <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span> <span class="c1">// compteur
+</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+ <span class="c1">// double d;
+</span> <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre>
+<p class="comment">Un ligne de commentaire est une ligne ignorée par le compilateur Java. Certains programmeurs mettent en commentaire des lignes inutiles comme ci-dessus. Cela peut être utile durant l'écriture de programmes, mais évitez de rendre un programme finalisé avec des lignes de code en commentaires.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="c1">//
+// Mon programme
+//
+//
+</span> <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span> <span class="cm">/* compteur */</span>
+ <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+ <span class="c1">// test
+</span> <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre>
+<p class="comment">Ce fragment de code est correct, mais en général on préfère utiliser <tt class="docutils literal">//</tt> et non <tt class="docutils literal">/* ... */</tt>  pour un commentaire sur une ligne. Inversement, on préfère utiliser <tt class="docutils literal">/* ... */</tt> pour un commentaire qui prend plusieurs lignes et non mettre <tt class="docutils literal">//</tt> au début de chaque ligne de commentaire.</p>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="cm">/***********************
+ * Mon programme
+ *
+ ***********************/</span>
+ <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span> <span class="c1">// compteur
+</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+ <span class="o">/*</span> <span class="n">test</span>
+ <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre>
+<p class="comment">Dans ce fragment de code, la ligne <tt class="docutils literal">/* test</tt> marque le début d'un commentaire sur plusieurs lignes. Ce commentaire doit se terminer avec <tt class="docutils literal">*/</tt>, ce qui n'est pas le cas dans le code ci-dessus.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="o">/***********************</span>
+ <span class="o">*</span> <span class="n">Mon</span> <span class="n">programme</span>
+ <span class="o">*</span>
+ <span class="o">***********************</span>
+ <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span> <span class="c1">// compteur
+</span> <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+ <span class="c1">// test
+</span> <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre>
+<p class="comment">Dans ce fragment de code, la première ligne marque le début d'un commentaire sur plusieurs lignes. Ce commentaire doit normalement se terminer par <tt class="docutils literal">*/</tt>. Ce n'est pas le cas de l'exemple ci-dessus et le compilateur Java va considérer l'entièreté du programme comme étant un commentaire.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="o">/***********************</span>
+ <span class="o">*</span> <span class="n">Mon</span> <span class="n">programme</span>
+ <span class="o">*</span>
+ <span class="o">***********************</span>
+ <span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span> <span class="o">/</span> <span class="n">compteur</span>
+ <span class="kt">int</span> <span class="n">n</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+ <span class="o">/</span> <span class="o">/</span> <span class="n">test</span>
+ <span class="k">if</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">3</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">n</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+ <span class="o">}</span>
+</pre>
+<p class="comment">Un commentaire doit débuter par <tt class="docutils literal">//</tt> (deux fois caractère <tt class="docutils literal">/</tt>). Si vous utilisez un seul caractère <tt class="docutils literal">/</tt> ou deux caractères <tt class="docutils literal">/ /</tt> séparés par un espace, le compilateur Java ne considère par qu'il s'agit d'un marqueur valide de commentaire.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-4-syntaxe-de-java">
+<h1>Question 4. Syntaxe de Java</h1>
+<p>Un langage de programmation tel que Java utilise une syntaxe bien précise. Il est important que vous sachiez reconnaître rapidement des erreurs de syntaxe dans un programme Java pour éviter de les commettre vous-même. Les programmes ci-dessous ont été écrits par des étudiants pour afficher le message <tt class="docutils literal">Hello, world!</tt> à l'écran. Chaque programme est stocké dans le fichier <tt class="docutils literal">Hello.java</tt>. Un seul de ces programmes est acceptable par le compilateur Java. Lequel ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="o">);</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Hello,&quot;</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">world</span><span class="o">!</span><span class="err">&quot;</span><span class="o">);</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Monprog</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="o">);</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">En Java, le fichier <tt class="docutils literal">Hello.java</tt> doit toujours contenir une classe dont le nom est <tt class="docutils literal">Hello</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">hello</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="o">);</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">En Java, le fichier <tt class="docutils literal">Hello.java</tt> doit toujours contenir une classe dont le nom est <tt class="docutils literal">Hello</tt>. Les noms de classe commencent toujours par une majuscule.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="o">);</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">En Java, la méthode qui est exécutée par défaut dans une classe Java a toujours comme signature <tt class="docutils literal">public main (String[] args)</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Hello</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="nf">main</span> <span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="o">)</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">En Java, la ligne <tt class="docutils literal"><span class="pre">System.out.println(&quot;Hello,</span> <span class="pre">world!&quot;)</span></tt> doit nécessairement se terminer par un <tt class="docutils literal">;</tt></p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-5-echange-du-contenu-de-variables">
+<h1>Question 5. Echange du contenu de variables</h1>
+<p>Dans un langage de programmation comme Java, il est souvent nécessaire d'échanger le contenu de deux variables. Considérons le programme ci-dessous dans lequel deux variables sont initialisées :</p>
+<pre class="code java literal-block">
+<span class="kt">int</span> <span class="n">a</span><span class="o">=</span><span class="mi">1401</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">b</span><span class="o">=</span><span class="mi">1101</span><span class="o">;</span>
+</pre>
+<p>Parmi les fragments de Java ci-dessous, lequel permet de correctement échanger le contenu de la variable <tt class="docutils literal">a</tt> avec le contenu de la variable <tt class="docutils literal">b</tt> ?</p>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+</pre>
+<p class="comment">Cette instruction place dans la variable <tt class="docutils literal">a</tt> le contenu de la variable <tt class="docutils literal">b</tt> mais pas l'inverse.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="n">b</span><span class="o">==</span><span class="n">a</span><span class="o">;</span>
+</pre>
+<p class="comment">Ce n'est pas une instruction valide en langage Java. Ne confondez-pas <tt class="docutils literal">==</tt> et <tt class="docutils literal">=</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+</pre>
+<p class="comment">Cette instruction place dans la variable <tt class="docutils literal">b</tt> le contenu de la variable <tt class="docutils literal">a</tt> mais pas l'inverse.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">c</span><span class="o">;</span> <span class="c1">// variable d'échange
+</span><span class="n">c</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="n">a</span><span class="o">=</span><span class="n">c</span><span class="o">;</span>
+<span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+</pre>
+<p class="comment">Exécutez pas à pas cette suite d'instructions. Que contiennent les variables <tt class="docutils literal">a</tt> et <tt class="docutils literal">b</tt> à la fin de cette exécution ?</p>
+</li>
+</ul>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">c</span><span class="o">;</span> <span class="c1">// variable d'échange
+</span><span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="n">a</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="n">b</span><span class="o">=</span><span class="n">c</span><span class="o">;</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">c</span><span class="o">;</span> <span class="c1">// variable d'échange
+</span><span class="n">c</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="n">b</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="n">a</span><span class="o">=</span><span class="n">c</span><span class="o">;</span>
+</pre>
+</li>
+</ul>
+</div>
+<div class="section" id="question-6-calcul-du-minimum">
+<h1>Question 6. Calcul du minimum</h1>
+<p>Considérons un programme Java qui manipule deux variables : <tt class="docutils literal">a</tt> et <tt class="docutils literal">b</tt>. Parmi les fragments de code ci-dessous, lequel place correctement dans la variable <tt class="docutils literal">min</tt> le minimum entre les contenus de <tt class="docutils literal">a</tt> et <tt class="docutils literal">b</tt> ?</p>
+<pre class="code java literal-block">
+<span class="kt">double</span> <span class="n">a</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">b</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">min</span><span class="o">;</span>
+</pre>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="kt">double</span> <span class="n">min</span><span class="o">;</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+<span class="o">{</span>
+  <span class="kt">double</span> <span class="n">min</span><span class="o">;</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Ce code ne fonctionne pas et le problème est assez subtil. En redéfinissant la variable <tt class="docutils literal">min</tt> à l'intérieur de chaque bloc, on définit une variable qui est considérée par le compilateur comme étant différente de la variable min qui a été définie avec les variables <tt class="docutils literal">a</tt> et <tt class="docutils literal">b</tt>. La nouvelle variable <tt class="docutils literal">min</tt> est mise à jour à l'intérieur du bloc mais n'est pas accessible en dehors de ce bloc.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">!=</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Ne confondez pas <tt class="docutils literal">!=</tt> et <tt class="docutils literal">&lt;=</tt></p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Ce programme place la valeur maximale dans la variable <tt class="docutils literal">min</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span>
+<span class="o">{</span>
+  <span class="n">min</span><span class="o">=</span><span class="n">a</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Lorsque la valeur de la variable <tt class="docutils literal">a</tt> est supérieure ou égale à la valeur de la variable <tt class="docutils literal">b</tt>, la variable <tt class="docutils literal">min</tt> n'est pas initialisée.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-7-valeur-absolue">
+<h1>Question 7. Valeur absolue</h1>
+<p>Si <tt class="docutils literal">x</tt> est une variable de type <tt class="docutils literal">double</tt>, lequel de ces fragments de code place dans la variable <tt class="docutils literal">abs</tt> la valeur absolue de <tt class="docutils literal">x</tt>?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">abs</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span> <span class="n">x</span><span class="o">&lt;</span><span class="mi">0</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">abs</span><span class="o">=-</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span> <span class="o">{</span>
+  <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span> <span class="n">x</span><span class="o">&lt;=</span><span class="mi">0</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">abs</span><span class="o">=-</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span> <span class="o">{</span>
+  <span class="n">abs</span><span class="o">=-</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span> <span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Ce fragment de code place toujours la valeur <tt class="docutils literal">x</tt> dans la variable <tt class="docutils literal">abs</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">abs</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">!=</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">abs</span><span class="o">=</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="k">else</span> <span class="o">{</span>
+   <span class="n">abs</span><span class="o">=-</span><span class="n">x</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Ne confondez pas <tt class="docutils literal">!=</tt> et <tt class="docutils literal">&gt;=</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-8-intervalles">
+<h1>Question 8. Intervalles</h1>
+<p>En mathématiques, on définit des intervalles, fermés, ouverts et semi-ouverts. L'intervalle semi-ouvert <span class="math">
+\([3,7[\)</span>
+ comprend l'ensemble des nombres réels qui sont supérieurs ou égaux à <cite>3</cite> et strictement inférieurs à 7. Sachant que <tt class="docutils literal">a</tt>, <tt class="docutils literal">b</tt> et <tt class="docutils literal">x</tt> sont des variables de type <tt class="docutils literal">double</tt>, lequel des fragments de code suivants affiche <tt class="docutils literal">vrai</tt> sur sa sortie standard si et seulement si <tt class="docutils literal">x</tt> appartient à l'intervalle <span class="math">
+\([a,b[\)</span>
+ ? On supposera pour cette question que la valeur stockée dans la variable <tt class="docutils literal">a</tt> est strictement inférieure à celle stockée dans la variable <tt class="docutils literal">b</tt>.</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+     <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+     <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">a</span><span class="o">)</span> <span class="o">){</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">a</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">){</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="n">x</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Dans quels cas l'expression <tt class="docutils literal">( <span class="pre">(a&gt;=x)</span> &amp;&amp; (x&lt;b) )</tt> est-elle vraie ?</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">a</span><span class="o">&lt;</span><span class="n">x</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">L'expression <tt class="docutils literal">( (a&lt;x) &amp;&amp; (x&lt;b) )</tt> est-elle vraie lorsque <tt class="docutils literal"><span class="pre">x==a</span></tt> ?</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span> <span class="o">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="n">x</span><span class="o">)</span> <span class="o">||</span> <span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">)</span> <span class="o">{</span>
+  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Ne confondez pas la conjonction (<cite>et</cite>) logique représenté par <tt class="docutils literal">&amp;&amp;</tt> en Java et la disjonction (<cite>ou</cite>) logique représentée en Java par <tt class="docutils literal">||</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&lt;</span><span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+     <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Affiche-t-elle &quot;vrai&quot; lorsque <tt class="docutils literal"><span class="pre">x==a</span></tt>?</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&lt;=</span><span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">&gt;=</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+     <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;vrai&quot;</span><span class="o">);</span>
+     <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Qu'affiche ce fragment de code lorsque <tt class="docutils literal"><span class="pre">x==b</span></tt> ?</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-9-operations-arithmetiques">
+<h1>Question 9. Opérations arithmétiques</h1>
+<p>Un seul des fragments de programmes ci-dessous affiche &quot;ok&quot; à l'écran ? Pouvez-vous trouver lequel ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">3</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="o">/</span><span class="n">j</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ok&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">c</span><span class="o">!=</span><span class="mf">0.0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ok&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">6</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="o">/</span><span class="n">j</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">k</span><span class="o">!=</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ok&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Dans ce fragment de code, les variables sont de type <tt class="docutils literal">int</tt>. En arithmétique entière, la division <tt class="docutils literal">6/7</tt> donne comme résultat <tt class="docutils literal">0</tt> avec un reste de <tt class="docutils literal">6</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">b</span><span class="o">=</span><span class="mi">3</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">c</span><span class="o">==</span><span class="mf">0.0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ok&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Dans ce fragment de code, les variables <tt class="docutils literal">a</tt> et <tt class="docutils literal">b</tt> sont de type <tt class="docutils literal">double</tt>. Elles permettent donc de stocker un nombre réel. Le résultat de <tt class="docutils literal">a/b</tt> est <tt class="docutils literal">0.33333</tt> qui est différent de <tt class="docutils literal">0.0</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">8</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">7</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="o">/</span><span class="n">j</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">k</span><span class="o">==</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ok&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Dans ce fragment de code, les variables sont de type <tt class="docutils literal">int</tt>. En arithmétique entière, la division <tt class="docutils literal">8/7</tt> donne comme résultat <tt class="docutils literal">1</tt> avec un reste de <tt class="docutils literal">1</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">double</span> <span class="n">a</span><span class="o">=</span><span class="mf">6.0</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">b</span><span class="o">=</span><span class="mf">7.0</span><span class="o">;</span>
+<span class="kt">double</span> <span class="n">c</span><span class="o">=</span><span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">;</span>
+<span class="k">if</span><span class="o">(</span><span class="n">c</span><span class="o">==</span><span class="mf">0.0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;ok&quot;</span><span class="o">);</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Dans ce fragment de code, les variables <tt class="docutils literal">a</tt> et <tt class="docutils literal">b</tt> sont de type <tt class="docutils literal">double</tt>. Elles permettent donc de stocker un nombre réel. Le résultat de <tt class="docutils literal">a/b</tt> est différent de <tt class="docutils literal">0.0</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-10-boucles-while">
+<h1>Question 10. Boucles <tt class="docutils literal">while</tt></h1>
+<p>Lequel des fragments de code Java ci-dessous permet de calculer la somme des <span class="math">
+\(n\)</span>
+ premiers entiers positifs ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span> <span class="o">&lt;</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">// la variable sum contient la somme des
+// n premiers entiers positifs</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="n">n</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">// la variable sum contient la somme des
+// n premiers entiers positifs</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span> <span class="o">&lt;</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">// la variable sum contient la somme des
+// n premiers entiers positifs</span>
+</pre>
+<p class="comment">Cette boucle ne se termine pas.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// à initialiser correctement
+</span><span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span> <span class="n">n</span><span class="o">&gt;</span><span class="mi">1</span> <span class="o">)</span> <span class="o">{</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">n</span><span class="o">;</span>
+   <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Quelle est la somme calculée par cette boucle <tt class="docutils literal">while</tt> ?</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// à initialiser correctement
+</span><span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span> <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">n</span> <span class="o">)</span> <span class="o">{</span>
+   <span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="c1">// la variable sum contient la somme des
+// n premiers entiers positifs</span>
+</pre>
+<p class="comment">L'expression qui sert de garde à une boucle <tt class="docutils literal">while</tt> doit être une expression booléenne. <tt class="docutils literal">sum=sum+n</tt> n'est pas une expression booléenne et ce programme n'est pas syntaxiquement valide.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="n">n</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="c1">// la variable sum contient la somme des
+// n premiers entiers positifs</span>
+</pre>
+<p class="comment">Ce programme illustre une subtilité de l'utilisation des blocs avec le langage Java. Sans accolades, la boucle <tt class="docutils literal">while</tt> porte uniquement sur l'instruction qui la suit. Ce code est donc équivalent au code ci-dessous :</p>
+<pre class="code java comment literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="n">n</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+</pre>
+<p class="comment">Dans ce fragment de code, la variable <tt class="docutils literal">count</tt> n'est pas décrémentée dans le corps de la boucle et celle-ci ne se termine done jamais. Pour éviter ce genre de problèmes, il est préférable de <em>toujours</em> utiliser des accolades pour délimiter le bloc d'une boucle <tt class="docutils literal">while</tt>.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&lt;</span><span class="n">n</span><span class="o">)</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+<span class="c1">// la variable sum contient la somme des
+// n premiers entiers positifs</span>
+</pre>
+<p class="comment">Ce programme illustre une subtilité de l'utilisation des blocs avec le langage Java. Sans accolades, la boucle <tt class="docutils literal">while</tt> porte uniquement sur l'instruction qui la suit. Ce code est donc équivalent au code ci-dessous :</p>
+<pre class="code java comment literal-block">
+<span class="kt">int</span> <span class="n">n</span><span class="o">=...;</span>  <span class="c1">// &gt;0 à initialiser correctement
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="c1">// la somme
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&lt;</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">sum</span><span class="o">+</span><span class="n">count</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+</pre>
+<p class="comment">Dans ce fragment de code, la variable <tt class="docutils literal">count</tt> n'est pas incrémentée dans le corps de la boucle et celle-ci ne se termine done jamais. Pour éviter ce genre de problèmes, il est préférable de <em>toujours</em> utiliser des accolades pour délimiter le bloc d'une boucle <tt class="docutils literal">while</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-11-boucles-while">
+<h1>Question 11. Boucles <tt class="docutils literal">while</tt></h1>
+<p>Les boucles <tt class="docutils literal">while</tt> sont utiles lorsque l'on doit répéter des opérations similaires à de multiples reprises. En arithmétique, la factorielle d'un entier positif (<tt class="docutils literal">n</tt>) et supérieur à <tt class="docutils literal">1</tt> est définie comme étant le produit de tous les entiers inférieurs ou égaux à <tt class="docutils literal">n</tt>. La factorielle de <tt class="docutils literal">n</tt> se note <span class="math">
+\(n!\)</span>
+. Ainsi <span class="math">
+\(4!=24\)</span>
+. Parmi les boucles <tt class="docutils literal">while</tt> ci-dessous, laquelle permet de calculer correctement <span class="math">
+\(n!\)</span>
+ ?</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kt">long</span> <span class="n">n</span><span class="o">=</span><span class="mi">17</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">fact</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// factorielle
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="n">n</span><span class="o">;</span>  <span class="c1">// compteur pour la boucle
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">fact</span><span class="o">=</span><span class="n">fact</span><span class="o">*</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<pre class="code java literal-block">
+<span class="kt">long</span> <span class="n">n</span><span class="o">=</span><span class="mi">17</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">fact</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// factorielle
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// compteur pour la boucle
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">fact</span><span class="o">=</span><span class="n">fact</span><span class="o">*</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kt">long</span> <span class="n">n</span><span class="o">=</span><span class="mi">17</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">fact</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span>  <span class="c1">// factorielle
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="n">n</span><span class="o">;</span>  <span class="c1">// compteur pour la boucle
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">fact</span><span class="o">=</span><span class="n">fact</span><span class="o">*</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Quel est le résultat de <span class="math">
+\(0 \times n\)</span>
+?</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">long</span> <span class="n">n</span><span class="o">=</span><span class="mi">17</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">fact</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// factorielle
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// compteur pour la boucle
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">fact</span><span class="o">=</span><span class="n">fact</span><span class="o">*</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Cette boucle ne s'arrête jamais.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">long</span> <span class="n">n</span><span class="o">=</span><span class="mi">17</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">fact</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// factorielle
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="n">n</span><span class="o">;</span>  <span class="c1">// compteur pour la boucle
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">1</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">fact</span><span class="o">=</span><span class="n">count</span><span class="o">;</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Cette boucle ne fait que placer la valeur <tt class="docutils literal">count</tt> dans <tt class="docutils literal">fact</tt> à chaque itération.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kt">long</span> <span class="n">n</span><span class="o">=</span><span class="mi">17</span><span class="o">;</span>
+<span class="kt">long</span> <span class="n">fact</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// factorielle
+</span><span class="kt">int</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="o">;</span>  <span class="c1">// compteur pour la boucle
+</span><span class="k">while</span><span class="o">(</span><span class="n">count</span><span class="o">&lt;=</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+   <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span><span class="o">;</span>
+   <span class="n">fact</span><span class="o">=</span><span class="n">fact</span><span class="o">*</span><span class="n">count</span><span class="o">;</span>
+<span class="o">}</span>
+</pre>
+<p class="comment">Cette boucle ne calcule pas la factorielle demandée. Que calcule-t-elle ?</p>
+</li>
+</ul>
+</div>
+<div class="section" id="question-99-utilisation-de-scanner">
+<h1>Question 99. Utilisation de Scanner</h1>
+<p>La classe standard Scanner peut être utilisée pour recevoir de l'information de l'utilisation via le clavier. Parmi les programmes ci-dessous, un seul permet d'afficher à l'écran la somme entre deux nombres réels entrés par l'utilisateur.</p>
+<ul class="positive">
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Somme</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+   <span class="kt">double</span> <span class="n">a</span><span class="o">;</span> <span class="c1">// premier nombre
+</span>   <span class="kt">double</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// second nombre
+</span>   <span class="kt">double</span> <span class="n">sum</span><span class="o">;</span> <span class="c1">// somme
+</span>   <span class="n">Scanner</span> <span class="n">entree</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le premier nombre :&quot;</span><span class="o">);</span>
+   <span class="n">a</span><span class="o">=</span><span class="n">entree</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le second nombre :&quot;</span><span class="o">);</span>
+   <span class="n">b</span><span class="o">=</span><span class="n">entree</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">;</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Somme :&quot;</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sum</span><span class="o">);</span>
+
+
+ <span class="o">}</span> <span class="c1">// fin de la méthode main
+</span>
+<span class="o">}</span> <span class="c1">// fin de la classe Somme</span>
+</pre>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Somme</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+   <span class="kt">double</span> <span class="n">a</span><span class="o">;</span> <span class="c1">// premier nombre
+</span>   <span class="kt">double</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// second nombre
+</span>   <span class="kt">double</span> <span class="n">sum</span><span class="o">;</span> <span class="c1">// somme
+</span>   <span class="n">Scanner</span> <span class="n">s</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le premier nombre :&quot;</span><span class="o">);</span>
+   <span class="n">a</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le second nombre :&quot;</span><span class="o">);</span>
+   <span class="n">b</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">a</span><span class="o">;</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Somme :&quot;</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sum</span><span class="o">);</span>
+
+
+ <span class="o">}</span> <span class="c1">// fin de la méthode main
+</span>
+<span class="o">}</span> <span class="c1">// fin de la classe Somme</span>
+</pre>
+</li>
+</ul>
+<ul class="negative">
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Somme</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+   <span class="kt">double</span> <span class="n">a</span><span class="o">;</span> <span class="c1">// premier nombre
+</span>   <span class="kt">double</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// second nombre
+</span>   <span class="kt">double</span> <span class="n">sum</span><span class="o">;</span> <span class="c1">// somme
+</span>   <span class="n">Scanner</span> <span class="n">s</span><span class="o">=</span><span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le premier nombre :&quot;</span><span class="o">);</span>
+   <span class="n">a</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le second nombre :&quot;</span><span class="o">);</span>
+   <span class="n">b</span><span class="o">=</span><span class="n">s</span><span class="o">.</span><span class="na">nextDouble</span><span class="o">();</span>
+   <span class="n">sum</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">a</span><span class="o">;</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Somme :&quot;</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sum</span><span class="o">);</span>
+
+
+ <span class="o">}</span> <span class="c1">// fin de la méthode main
+</span>
+<span class="o">}</span> <span class="c1">// fin de la classe Somme</span>
+</pre>
+<p class="comment">Un <tt class="docutils literal">Scanner</tt> est un objet Java. Il doit être créé en faisant <tt class="docutils literal">new Scanner(System.in)</tt>. Dans cette initialisation, <tt class="docutils literal">System.in</tt> est l'entrée standard qui correspond en pratique au clavier.</p>
+</li>
+<li><pre class="code java first literal-block">
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Somme</span> <span class="o">{</span>
+
+ <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+
+   <span class="kt">double</span> <span class="n">a</span><span class="o">;</span> <span class="c1">// premier nombre
+</span>   <span class="kt">double</span> <span class="n">b</span><span class="o">;</span> <span class="c1">// second nombre
+</span>   <span class="n">Scanner</span> <span class="n">s</span><span class="o">=</span><span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le premier nombre :&quot;</span><span class="o">);</span>
+   <span class="n">a</span><span class="o">=</span><span class="n">nextDouble</span><span class="o">();</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Entrez le second nombre :&quot;</span><span class="o">);</span>
+   <span class="n">b</span><span class="o">=</span><span class="n">nextDouble</span><span class="o">();</span>
+   <span class="kt">double</span> <span class="n">sum</span><span class="o">;</span> <span class="c1">// somme
+</span>   <span class="n">sum</span><span class="o">=</span><span class="n">b</span><span class="o">+</span><span class="n">a</span><span class="o">;</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Somme :&quot;</span><span class="o">);</span>
+   <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">sum</span><span class="o">);</span>
+
+
+ <span class="o">}</span> <span class="c1">// fin de la méthode main
+</span>
+<span class="o">}</span> <span class="c1">// fin de la classe Somme</span>
+</pre>
+<p class="comment">Un <tt class="docutils literal">Scanner</tt> est un objet Java. Tout comme <tt class="docutils literal">TextIO</tt> qui est décrit dans le livre, cet objet supporte différentes méthodes dont <tt class="docutils literal">nextDouble</tt>. Cette méthode doit être appliquée à un objet de type <tt class="docutils literal">Scanner</tt>.</p>
+</li>
+</ul>
+<!-- include ../javanotes_toc.rst -->
+</div>
+</div>
+</body>
+</html>
