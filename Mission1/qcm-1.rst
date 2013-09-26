@@ -365,7 +365,7 @@ Un langage de programmation tel que Java utilise une syntaxe bien précise. Il es
      
      public static void main (String[] args) {
        System.out.print("Hello,");
-       System.out.println(world!");
+       System.out.println("world!");
      }
     }
 
