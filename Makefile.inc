@@ -26,7 +26,7 @@ qcm: 	$(RST_FILES)
 	( cp $$i $(EXNAME)/images ;) ; done
 
 all: qcm
-	cd $(EXNAME) && zip -9rp $(EXNAME)-$(MISSION).zip *pdf js/* images/* *.html $(EXNAME).zip
+	cd $(EXNAME) && zip -9rp $(EXNAME).zip *pdf js/* images/* *.html $(EXNAME).zip
 
 clean:
-	-rm -r $(EXNAME)
+	-rm -rf $(EXNAME)
