@@ -1,2 +1,2 @@
-MISSION=1
+MISSION=6
 include ../Makefile.inc
