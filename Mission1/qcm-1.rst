@@ -415,7 +415,7 @@ Un langage de programmation tel que Java utilise une syntaxe bien précise. Il es
 
  .. class:: comment
 
-    En Java, la méthode qui est exécutée par défaut dans une classe Java a toujours comme signature ``public main (String[] args)``. 
+    En Java, la méthode qui est exécutée par défaut dans une classe Java a toujours comme signature ``public static void main (String[] args)``. 
 
 
 -
