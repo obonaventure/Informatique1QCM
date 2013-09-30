@@ -216,7 +216,7 @@ Les instructions conditionnelles peuvent parfois comporter des conditions plus c
 -
  ::
 
-    if(! ( (x<min) && (x>=max) ) ){   }
+    if(! ( (x<min) || (x>=max) ) ){   }
 
 .. class:: negative
 
