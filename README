@@ -1,0 +1,5 @@
+Ce répertoire comprend les Questionnaires à choix multiples utilisés pour les cours d'informatique 1 (SINF1101 et FSAB1401) à l'UCL. 
+
+Ces QCMs sont rédigés en restructured text en essayant tant que possible de les structurer sous la forme de root questions telles que présentées dans http://www.newgradiance.com/downloads/auth-guide.pdf
+
+Une question de QCM comprend n réponses positives et m réponses négatives. 
