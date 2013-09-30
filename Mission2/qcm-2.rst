@@ -737,9 +737,9 @@ Sachant que ``System.out.print("X");`` affiche le caractère ``X`` à l'écran et q
        System.out.println();
     }
  
-    .. class:: comment
+ .. class:: comment
 
-       Ce fragment de programme affiche 5 caractères par ligne et 5 lignes. Vérifiez les bornes de la boucle ``for``.
+    Ce fragment de programme affiche 5 caractères par ligne et 5 lignes. Vérifiez les bornes de la boucle ``for``.
 
 
 -
@@ -752,9 +752,9 @@ Sachant que ``System.out.print("X");`` affiche le caractère ``X`` à l'écran et q
        System.out.println();
     }
 
-  .. class:: comment
+ .. class:: comment
 
-     Ce fragment de programme affiche 3 caractères par ligne et 3 lignes. Vérifiez les bornes de la boucle ``for``.
+    Ce fragment de programme affiche 3 caractères par ligne et 3 lignes. Vérifiez les bornes de la boucle ``for``.
 
 
 Question 9. Boucles ``for`` imbriquées
@@ -1003,7 +1003,7 @@ On supposera pour répondre à cette question que les variables ``l`` et ``c`` ont
 Question 12. Calcul de la somme des diviseurs premiers d'un nombre
 ------------------------------------------------------------------
 
-En arithmétique, certaines propriétés sur les nombres entiers dépendent de la somme des diviseurs entiers de ce nombre. Ainsi, un nombre :math:`n` est dit `parfait <http://fr.wikipedia.org/wiki/Nombre_parfait>`_ si :math:`\sigma(n)=2n` où :math:`\sigma(n)` est la somme des diviseurs de ce nombre. Lequel des fragments de programmes ci-dessous place dans la variable ``sigma`` la somme des diviseurs de ``n`` ?
+En arithmétique, certaines propriétés sur les nombres entiers dépendent de la somme des diviseurs entiers de ce nombre. Ainsi, un nombre :math:`n` est dit `parfait <http://fr.wikipedia.org/wiki/Nombre_parfait>`_ si :math:`\sigma(n)=2n` où :math:`\sigma(n)` est la somme des diviseurs de ce nombre. Lequel des fragments de programmes ci-dessous place dans la variable ``sum`` la somme des diviseurs de ``n`` ?
 
 .. class:: positive
 
